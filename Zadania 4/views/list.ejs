@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<% include ../partials/head %>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <% include partials/head.ejs %>
+</head>
 <body>
-<% include ../partials/navigation %>
-<h1><%= pageTitle %></h1>
-<ul>
-  <% students.forEach(student => { %>
-    <li>
-      <p><%= student.fullName %></p>
-      <p><%= student.code %></p>
-      <p><%= student.fieldOfStudies %></p>
-    </li>
-  <% }); %>
-</ul>
+  <h1><%= pageTitle %></h1>
+
+  <% include partials/navigation.ejs %>
+
+  <ul>
+    <% students.forEach(student => { %>
+      <li>
+        <p><%= student.fullName %></p>
+        <p><%= student.code %></p>
+        <p><%= student.fieldOfStudies %></p>
+      </li>
+    <% }) %>
+  </ul>
+
 </body>
 </html>
